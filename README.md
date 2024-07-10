@@ -18,5 +18,7 @@ Double click on start.bat.
 
 3. For Mac/Linux:
 Open your terminal and run:
+
 chmod +x start.sh
+
 ./start.sh
