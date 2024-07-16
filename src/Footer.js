@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
 function Footer() {
     useEffect(() => {
-        window.fedsGlobalConfig = {
-            contentRoot: '/federal/home',
-            miloLibs: 'https://footer--milo--sonawanesnehal3.hlx.page'
-        };
-        const loadFooterScript = async () => {
-            await import('https://bootstraper--federal--adobecom.hlx.page/federal/footer.js');
-        };
-        loadFooterScript();
-    });
+        const initializeFooter = async () => {
+            if (!window.footerInitialized) {
+              window.footerInitialized = true;
+              window.fedsGlobalConfig = {
+                contentRoot: '/federal/home',
+                miloLibs: 'https://feds--milo--adobecom.hlx.page'
+              };
+              const { default: loadFooter } = await import('https://feds--milo--adobecom.hlx.page/libs/navigation/footer.js');
+              loadFooter(window.fedsGlobalConfig);
+            }
+          };
+          initializeFooter();
+        }, []);
     return (
       <>
         <header className="global-navigation"></header>
