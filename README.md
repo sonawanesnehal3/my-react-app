@@ -23,6 +23,3 @@ chmod +x start.sh
 
 ./start.sh
 
-4. Append url param fedsBranch=bootstraper
-
-Ex. http://localhost:3002/?fedsBranch=bootstraper
